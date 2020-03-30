@@ -3,10 +3,10 @@
 ## Google Cloud Life Sciences API
 This ARTIC network pipeline has been ported to work on the Google Cloud Life Sciences API
 
-Edit nextflow.conf to add you Google Cloud project ID, bucket name
+Edit nextflow.conf to add your Google Cloud project ID, workdir bucketname
 
-##### Quick-start on GLS
-
+##### Quick-start on Google Cloud
+Enable the Life Sciences API
 Follow the setup steps on https://cloud.google.com/life-sciences/docs/tutorials/nextflow
 
 
