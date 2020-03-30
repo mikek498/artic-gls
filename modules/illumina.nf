@@ -4,13 +4,17 @@ process readTrimming {
     * @input tuple(sampleName, path(forward), path(reverse))
     * @output trimgalore_out tuple(sampleName, path("*_val_1.fq.gz"), path("*_val_2.fq.gz"))
     */
+    cpus 16
+    memory '60 GB'
+
+
+
 
     tag { sampleName }
 
     publishDir "${params.outdir}/${task.process.replaceAll(":","_")}", pattern: '*_val_{1,2}.fq.gz', mode: 'copy'
 
-    cpus 2
-
+   
     input:
     tuple(sampleName, path(forward), path(reverse))
 
@@ -28,6 +32,8 @@ process readTrimming {
 }
 
 process readMapping {
+    cpus 8
+    memory '24 GB'
     /**
     * Maps trimmed paired fastq using BWA (http://bio-bwa.sourceforge.net/)
     * Uses samtools to convert to BAM, sort and index sorted BAM (http://www.htslib.org/doc/samtools.html)
@@ -57,7 +63,8 @@ process readMapping {
 }
 
 process makeIvarBedfile {
-
+    cpus 16
+    memory '60 GB'
     tag { schemeRepo }
 
     publishDir "${params.outdir}/${task.process.replaceAll(":","_")}", pattern: "ivar.bed", mode: 'copy'
@@ -93,7 +100,8 @@ process makeIvarBedfile {
 }
 
 process trimPrimerSequences {
-
+    cpus 16
+    memory '60 GB'
     tag { sampleName }
 
     publishDir "${params.outdir}/climb_upload/${params.runPrefix}/${sampleName}", pattern: "${sampleName}.mapped.primertrimmed.sorted.bam", mode: 'copy'
@@ -119,7 +127,8 @@ process trimPrimerSequences {
 }
 
 process makeConsensus {
-
+    cpus 16
+    memory '60 GB'
     tag { sampleName }
 
     publishDir "${params.outdir}/climb_upload/${params.runPrefix}/${sampleName}", pattern: "${sampleName}.primertrimmed.consensus.fa", mode: 'copy'
