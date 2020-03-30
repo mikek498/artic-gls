@@ -14,11 +14,11 @@ Edit nextflow.conf to add you Google Cloud project ID, bucket name
 Follow the setup steps on https://cloud.google.com/life-sciences/docs/tutorials/nextflow
 
 
-`export NXF_VER=20.01.0
-export NXF_MODE=google
-export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/your-downloaded-nextflow-service-account.json`
-(Install a java jre before installing nextflow)
-`curl https://get.nextflow.io | bash`
+`export NXF_VER=20.01.0  
+export NXF_MODE=google  
+export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/your-downloaded-nextflow-service-account.json`  
+(Install a java jre before installing nextflow)  
+`curl https://get.nextflow.io | bash`  
 
 `nextflow run ncov2019-artic-nf/main.nf -profile gls --directory gs://bucketname/folder/fastq --outdir gs://bucketname/output --illumina`
 
