@@ -1,10 +1,6 @@
-# ncov2019-artic-nf
-A Nextflow pipeline for running the ARTIC network's fieldbioinformatics tools (https://github.com/artic-network/fieldbioinformatics), with a focus on ncov2019 
+# ncov2019-artic-nf on Google Cloud Life Sciences
 
-WARNING - THIS REPO IS UNDER ACTIVE DEVELOPMENT AND ITS BEHAVIOUR MAY CHANGE AT **ANY** TIME. 
-
-PLEASE ENSURE THAT YOU READ BOTH THE README AND THE CONFIG FILE AND UNDERSTAND THE EFFECT OF THE OPTIONS ON YOUR DATA! 
-#### Google Cloud Life Sciences API
+## Google Cloud Life Sciences API
 This ARTIC network pipeline has been ported to work on the Google Cloud Life Sciences API
 
 Edit nextflow.conf to add you Google Cloud project ID, bucket name
@@ -14,9 +10,9 @@ Edit nextflow.conf to add you Google Cloud project ID, bucket name
 Follow the setup steps on https://cloud.google.com/life-sciences/docs/tutorials/nextflow
 
 
-`export NXF_VER=20.01.0  
-export NXF_MODE=google  
-export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/your-downloaded-nextflow-service-account.json`  
+`export NXF_VER=20.01.0`  
+`export NXF_MODE=google`  
+`export GOOGLE_APPLICATION_CREDENTIALS=${PWD}/your-downloaded-nextflow-service-account.json`  
 (Install a java jre before installing nextflow)  
 `curl https://get.nextflow.io | bash`  
 
